@@ -21,6 +21,9 @@ class DNNClassifier(tf.keras.Model):
 
     def call(self, inputs):
         x = self.feature_layer(inputs)
+        print('-'*20)
+        print(inputs)
+        print(x)
         for hidden_layer in self.hidden_layers:
             x = hidden_layer(x)
         return self.prediction_layer(x)
